@@ -1,0 +1,90 @@
+/* Общие стили для body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Форма логина */
+.login-form {
+    background: #ffffff;
+    padding: 40px 35px;
+    width: 360px;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Заголовок формы */
+.login-form h2 {
+    margin-bottom: 30px;
+    color: #1a237e;
+    font-size: 24px;
+}
+
+/* Сообщение об ошибке */
+#message {
+    height: 20px;
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Инпуты */
+.login-form input {
+    width: 100%;
+    padding: 14px 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    line-height: 1.2;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Фокус на инпуты */
+.login-form input:focus {
+    border-color: #3a7bd5;
+    box-shadow: 0 0 8px rgba(58, 123, 213, 0.4);
+}
+
+/* Кнопки */
+.login-form button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+/* Кнопка Войти */
+.login-form button[type="submit"] {
+    background: #3a7bd5;
+    color: white;
+}
+
+.login-form button[type="submit"]:hover {
+    background: #2c5aa0;
+}
+
+/* Кнопка Зарегистрироваться */
+.login-form button[type="button"] {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.login-form button[type="button"]:hover {
+    background: #dcdcdc;
+}

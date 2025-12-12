@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form class="login-form" id="registerForm">
+        <h2>Регистрация</h2>
+        <div id="message"></div>
+        <input type="text" id="login" placeholder="Логин" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Пароль" required>
+        <button type="submit">Зарегистрироваться</button>
+        <button type="button" onclick="location.href='/auth.html'">Назад</button>
+    </form>
+
+    <script type="module">
+        const form = document.getElementById('registerForm');
+        const messageDiv = document.getElementById('message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const login = document.getElementById('login').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            try {
+                const res = await fetch('/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ login, email, password })
+                });
+
+                const data = await res.json();
+                if (data.success) {
+                    window.location.href = '/auth.html';
+                } else {
+                    messageDiv.textContent = data.message;
+                }
+            } catch (err) {
+                console.error(err);
+                messageDiv.textContent = 'Ошибка сервера';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -3,6 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+    <title>Контакты</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        [v-cloak] { display: none; }
+
+        /* Контейнер с паддингом снизу, чтобы кнопка не перекрывала контент */
+        .container { padding-bottom: 100px; }
+
+        /* Кнопка Выйти внизу по центру */
+        .logout-footer {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        /* Немного улучшаем форму */
+        .form-inline input.form-control {
+            min-width: 150px;
+        }
+        .card h5 {
+            margin-bottom: 5px;
+        }
+        .card p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container pt-4" id="app" v-cloak>
+    <h1 class="mb-4">Контакты</h1>
+
+    <!-- Форма добавления контакта -->
+    <form class="form-inline mb-3" @submit.prevent="createContact">
+        <input type="text" class="form-control mr-2 mb-2" placeholder="Имя" v-model="form.name">
+        <input type="text" class="form-control mr-2 mb-2" placeholder="Описание" v-model="form.meaning">
+        <button class="btn btn-primary mb-2" type="submit" :disabled="!canCreate">Создать</button>
+    </form>
+
+    <!-- Загрузка -->
+    <div v-if="loading" class="text-center my-5">
+        <loader></loader>
+    </div>
+
+    <!-- Список контактов -->
+    <div v-else-if="contacts.length">
+        <div class="card mb-2" v-for="contact in contacts" :key="contact.id_contact">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <div>
+                    <h5 :style="{ color: contact.marked ? 'red' : 'black' }">{{ contact.name }}</h5>
+                    <p>{{ contact.meaning }}</p>
+                </div>
+                <div>
+                    <button class="btn btn-sm btn-info mr-2" @click="markContact(contact.id_contact)">
+                        {{ contact.marked ? 'Снять отметку' : 'Отметить' }}
+                    </button>
+                    <button class="btn btn-sm btn-danger" @click="removeContact(contact.id_contact)">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p v-else>Контактов нет</p>
+
+    <!-- Кнопка Выйти внутри Vue -->
+    <div class="logout-footer">
+        <button class="btn btn-warning btn-lg" @click="logout">Выйти</button>
+    </div>
+</div>
+
+<script type="module" src="frontend.js"></script>
+</body>
+</html>
+=======
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
     crossorigin="anonymous">
@@ -54,3 +130,4 @@
     <script type="module" src="frontend.js"></script>
 </body>
 </html>
+>>>>>>> 611885622bb2f5d8ee49c78592503876bc1d2669

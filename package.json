@@ -19,10 +19,22 @@
   "author": "Alex",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
+    "bcrypt": "^6.0.0",
+    "express": "^4.17.1",
+    "express-mysql-session": "^3.0.3",
+    "express-session": "^1.18.2",
+    "mysql2": "^3.15.3",
+    "uuid": "^7.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+=======
     "express": "^4.17.1",
     "uuid": "^7.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
+>>>>>>> 611885622bb2f5d8ee49c78592503876bc1d2669
   }
 }
